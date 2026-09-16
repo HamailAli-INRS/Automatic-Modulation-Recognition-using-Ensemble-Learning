@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+
+# Environments
+automatic-modulation-recognition-using-ensemble-learning/
+env/
+venv/
+ENV/
+.venv/
+
+# Temporary & Old Scratch Files
+*.npz
+*.npy
+scratch/
+.system_generated/
+*.log
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
