@@ -70,8 +70,8 @@ def plot_spectral_efficiency(ebno_range, results, save_path="spectral_efficiency
     fig, ax = plt.subplots(figsize=(8, 5))
     
     # Effective Throughput = (1 - BLER) * Modulation_Bits * CodeRate * (Data_Symbols / Total_Symbols)
-    classical_throughput = (1.0 - np.array(results['classical_bler'])) * 4.0 * 0.5 * (768.0 / 896.0) # bits/s/Hz
-    neural_throughput = (1.0 - np.array(results['neural_bler'])) * 4.0 * 0.5 * (896.0 / 896.0) # 100% data allocation
+    classical_throughput = (1.0 - np.array(results['classical_bler'])) * 4.0 * 0.5 * (12.0 / 14.0) # bits/s/Hz
+    neural_throughput = (1.0 - np.array(results['neural_bler'])) * 4.0 * 0.5 * 1.0 # 100% data allocation
     
     ax.plot(ebno_range, classical_throughput, 'r--s', label='Classical System (14.3% Pilot Overhead)')
     ax.plot(ebno_range, neural_throughput, 'g-^', label='Proposed Pilot-Free Neural Demapper (0% Overhead)')

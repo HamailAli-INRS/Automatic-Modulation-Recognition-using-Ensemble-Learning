@@ -1,0 +1,506 @@
+[
+    {
+        "fft_size": 64,
+        "channel_type": "awgn",
+        "num_ofdm_symbols": 14,
+        "info_bits_k_neural": 1792,
+        "coded_bits_n_neural": 3584,
+        "info_bits_k_classical": 1536,
+        "coded_bits_n_classical": 3072,
+        "grid_dimensions": "14 x 64",
+        "modulation": "16-QAM",
+        "hidden_dim": 48,
+        "num_res_blocks": 3,
+        "trainable_params": 128021,
+        "total_params": 128021,
+        "neural_macs": 113799168,
+        "neural_flops": 228501504,
+        "neural_gflops": 0.228501504,
+        "neural_mflops": 228.501504,
+        "classical_flops_detail": {
+            "ls_estimation": 768,
+            "interpolation": 17920,
+            "lmmse_equalization": 26880,
+            "app_demapping": 196608,
+            "total_flops": 242176
+        },
+        "classical_flops": 242176,
+        "classical_mflops": 0.242176,
+        "flops_ratio": 943.5348837209302,
+        "neural_latency": {
+            "single_mean_ms": 3.2292449905071408,
+            "single_std_ms": 0.336943018841499,
+            "single_min_ms": 2.7927999617531896,
+            "single_max_ms": 3.8958999793976545,
+            "single_p95_ms": 3.653079899959266,
+            "batched_mean_ms": 0.976215313130524,
+            "batched_std_ms": 0.07673837693012976
+        },
+        "classical_latency": {
+            "mean_ms": 8.05637874873355,
+            "std_ms": 0.13134038005405546
+        },
+        "neural_e2e_latency": {
+            "mean_ms": 9.15711999987252,
+            "std_ms": 0.10964787880033289
+        },
+        "training_step_latency": {
+            "mean_ms": 300.2008299983572,
+            "std_ms": 23.71387560949382
+        },
+        "memory": {
+            "param_bytes": 512084,
+            "param_mb": 0.4883613586425781,
+            "buffer_bytes": 0,
+            "activation_bytes_single": 2422784,
+            "activation_mb_single": 2.310546875,
+            "total_inference_mb": 2.798908233642578
+        },
+        "neural_throughput_single_mbps": 0.554928475624444,
+        "neural_throughput_batched_mbps": 1.8356606128758832,
+        "classical_throughput_mbps": 0.19065637898931412,
+        "classical_pilot_overhead_pct": 14.285714285714285,
+        "neural_pilot_overhead_pct": 0.0
+    },
+    {
+        "fft_size": 128,
+        "channel_type": "awgn",
+        "num_ofdm_symbols": 14,
+        "info_bits_k_neural": 3584,
+        "coded_bits_n_neural": 7168,
+        "info_bits_k_classical": 3072,
+        "coded_bits_n_classical": 6144,
+        "grid_dimensions": "14 x 128",
+        "modulation": "16-QAM",
+        "hidden_dim": 48,
+        "num_res_blocks": 3,
+        "trainable_params": 128021,
+        "total_params": 128021,
+        "neural_macs": 227598336,
+        "neural_flops": 457003008,
+        "neural_gflops": 0.457003008,
+        "neural_mflops": 457.003008,
+        "classical_flops_detail": {
+            "ls_estimation": 1536,
+            "interpolation": 35840,
+            "lmmse_equalization": 53760,
+            "app_demapping": 393216,
+            "total_flops": 484352
+        },
+        "classical_flops": 484352,
+        "classical_mflops": 0.484352,
+        "flops_ratio": 943.5348837209302,
+        "neural_latency": {
+            "single_mean_ms": 4.901565000182018,
+            "single_std_ms": 0.33583412613795066,
+            "single_min_ms": 3.7597999908030033,
+            "single_max_ms": 5.58730005286634,
+            "single_p95_ms": 5.258789984509349,
+            "batched_mean_ms": 1.9060234368225792,
+            "batched_std_ms": 0.11335984900835339
+        },
+        "classical_latency": {
+            "mean_ms": 16.38252124976134,
+            "std_ms": 0.6142526519556544
+        },
+        "neural_e2e_latency": {
+            "mean_ms": 20.38811250240542,
+            "std_ms": 0.6059168411199328
+        },
+        "training_step_latency": {
+            "mean_ms": 665.2912499965169,
+            "std_ms": 44.78191002495887
+        },
+        "memory": {
+            "param_bytes": 512084,
+            "param_mb": 0.4883613586425781,
+            "buffer_bytes": 0,
+            "activation_bytes_single": 4845568,
+            "activation_mb_single": 4.62109375,
+            "total_inference_mb": 5.109455108642578
+        },
+        "neural_throughput_single_mbps": 0.7311950366601095,
+        "neural_throughput_batched_mbps": 1.8803546329811547,
+        "classical_throughput_mbps": 0.18751692448100762,
+        "classical_pilot_overhead_pct": 14.285714285714285,
+        "neural_pilot_overhead_pct": 0.0
+    },
+    {
+        "fft_size": 256,
+        "channel_type": "awgn",
+        "num_ofdm_symbols": 14,
+        "info_bits_k_neural": 7168,
+        "coded_bits_n_neural": 14336,
+        "info_bits_k_classical": 6144,
+        "coded_bits_n_classical": 12288,
+        "grid_dimensions": "14 x 256",
+        "modulation": "16-QAM",
+        "hidden_dim": 48,
+        "num_res_blocks": 3,
+        "trainable_params": 128021,
+        "total_params": 128021,
+        "neural_macs": 455196672,
+        "neural_flops": 914006016,
+        "neural_gflops": 0.914006016,
+        "neural_mflops": 914.006016,
+        "classical_flops_detail": {
+            "ls_estimation": 3072,
+            "interpolation": 71680,
+            "lmmse_equalization": 107520,
+            "app_demapping": 786432,
+            "total_flops": 968704
+        },
+        "classical_flops": 968704,
+        "classical_mflops": 0.968704,
+        "flops_ratio": 943.5348837209302,
+        "neural_latency": {
+            "single_mean_ms": 7.9008799977600574,
+            "single_std_ms": 1.0959731881406034,
+            "single_min_ms": 6.395600037649274,
+            "single_max_ms": 9.982699993997812,
+            "single_p95_ms": 9.173489914974198,
+            "batched_mean_ms": 5.272581873941817,
+            "batched_std_ms": 0.27487585959396266
+        },
+        "classical_latency": {
+            "mean_ms": 77.9457150012604,
+            "std_ms": 4.460323676929448
+        },
+        "neural_e2e_latency": {
+            "mean_ms": 104.56113500113133,
+            "std_ms": 3.2302428759661943
+        },
+        "training_step_latency": {
+            "mean_ms": 2271.8004699912854,
+            "std_ms": 66.31854017185933
+        },
+        "memory": {
+            "param_bytes": 512084,
+            "param_mb": 0.4883613586425781,
+            "buffer_bytes": 0,
+            "activation_bytes_single": 9691136,
+            "activation_mb_single": 9.2421875,
+            "total_inference_mb": 9.730548858642578
+        },
+        "neural_throughput_single_mbps": 0.9072407126841778,
+        "neural_throughput_batched_mbps": 1.3594857645408462,
+        "classical_throughput_mbps": 0.0788240893024158,
+        "classical_pilot_overhead_pct": 14.285714285714285,
+        "neural_pilot_overhead_pct": 0.0
+    },
+    {
+        "fft_size": 300,
+        "channel_type": "awgn",
+        "num_ofdm_symbols": 14,
+        "info_bits_k_neural": 8400,
+        "coded_bits_n_neural": 16800,
+        "info_bits_k_classical": 7200,
+        "coded_bits_n_classical": 14400,
+        "grid_dimensions": "14 x 300",
+        "modulation": "16-QAM",
+        "hidden_dim": 48,
+        "num_res_blocks": 3,
+        "trainable_params": 128021,
+        "total_params": 128021,
+        "neural_macs": 533433600,
+        "neural_flops": 1071100800,
+        "neural_gflops": 1.0711008,
+        "neural_mflops": 1071.1008,
+        "classical_flops_detail": {
+            "ls_estimation": 3600,
+            "interpolation": 84000,
+            "lmmse_equalization": 126000,
+            "app_demapping": 921600,
+            "total_flops": 1135200
+        },
+        "classical_flops": 1135200,
+        "classical_mflops": 1.1352,
+        "flops_ratio": 943.5348837209302,
+        "neural_latency": {
+            "single_mean_ms": 9.262514999136329,
+            "single_std_ms": 1.4189565484680002,
+            "single_min_ms": 6.710599991492927,
+            "single_max_ms": 12.288100086152554,
+            "single_p95_ms": 11.802174925105646,
+            "batched_mean_ms": 6.710407500213478,
+            "batched_std_ms": 0.4050085748734009
+        },
+        "classical_latency": {
+            "mean_ms": 91.24829374923138,
+            "std_ms": 1.069049689475959
+        },
+        "neural_e2e_latency": {
+            "mean_ms": 115.3446874988731,
+            "std_ms": 3.3208934290483074
+        },
+        "training_step_latency": {
+            "mean_ms": 2716.8606699968223,
+            "std_ms": 139.02624439453655
+        },
+        "memory": {
+            "param_bytes": 512084,
+            "param_mb": 0.4883613586425781,
+            "buffer_bytes": 0,
+            "activation_bytes_single": 11356800,
+            "activation_mb_single": 10.8306884765625,
+            "total_inference_mb": 11.319049835205078
+        },
+        "neural_throughput_single_mbps": 0.9068811225442817,
+        "neural_throughput_batched_mbps": 1.2517868698335788,
+        "classical_throughput_mbps": 0.07890558501605568,
+        "classical_pilot_overhead_pct": 14.285714285714285,
+        "neural_pilot_overhead_pct": 0.0
+    },
+    {
+        "fft_size": 64,
+        "channel_type": "rayleigh",
+        "num_ofdm_symbols": 14,
+        "info_bits_k_neural": 1792,
+        "coded_bits_n_neural": 3584,
+        "info_bits_k_classical": 1536,
+        "coded_bits_n_classical": 3072,
+        "grid_dimensions": "14 x 64",
+        "modulation": "16-QAM",
+        "hidden_dim": 48,
+        "num_res_blocks": 3,
+        "trainable_params": 128021,
+        "total_params": 128021,
+        "neural_macs": 113799168,
+        "neural_flops": 228501504,
+        "neural_gflops": 0.228501504,
+        "neural_mflops": 228.501504,
+        "classical_flops_detail": {
+            "ls_estimation": 768,
+            "interpolation": 17920,
+            "lmmse_equalization": 26880,
+            "app_demapping": 196608,
+            "total_flops": 242176
+        },
+        "classical_flops": 242176,
+        "classical_mflops": 0.242176,
+        "flops_ratio": 943.5348837209302,
+        "neural_latency": {
+            "single_mean_ms": 4.351459990721196,
+            "single_std_ms": 0.5167800208479236,
+            "single_min_ms": 3.638399997726083,
+            "single_max_ms": 5.508799920789897,
+            "single_p95_ms": 5.168794986093417,
+            "batched_mean_ms": 1.184300625391188,
+            "batched_std_ms": 0.08953613089960669
+        },
+        "classical_latency": {
+            "mean_ms": 10.76851250254549,
+            "std_ms": 0.6637173360416699
+        },
+        "neural_e2e_latency": {
+            "mean_ms": 11.65250125050079,
+            "std_ms": 0.6794854634288447
+        },
+        "training_step_latency": {
+            "mean_ms": 327.94276500935666,
+            "std_ms": 17.0176690130791
+        },
+        "memory": {
+            "param_bytes": 512084,
+            "param_mb": 0.4883613586425781,
+            "buffer_bytes": 0,
+            "activation_bytes_single": 2422784,
+            "activation_mb_single": 2.310546875,
+            "total_inference_mb": 2.798908233642578
+        },
+        "neural_throughput_single_mbps": 0.411815805228856,
+        "neural_throughput_batched_mbps": 1.5131293200221707,
+        "classical_throughput_mbps": 0.14263808484569399,
+        "classical_pilot_overhead_pct": 14.285714285714285,
+        "neural_pilot_overhead_pct": 0.0
+    },
+    {
+        "fft_size": 128,
+        "channel_type": "rayleigh",
+        "num_ofdm_symbols": 14,
+        "info_bits_k_neural": 3584,
+        "coded_bits_n_neural": 7168,
+        "info_bits_k_classical": 3072,
+        "coded_bits_n_classical": 6144,
+        "grid_dimensions": "14 x 128",
+        "modulation": "16-QAM",
+        "hidden_dim": 48,
+        "num_res_blocks": 3,
+        "trainable_params": 128021,
+        "total_params": 128021,
+        "neural_macs": 227598336,
+        "neural_flops": 457003008,
+        "neural_gflops": 0.457003008,
+        "neural_mflops": 457.003008,
+        "classical_flops_detail": {
+            "ls_estimation": 1536,
+            "interpolation": 35840,
+            "lmmse_equalization": 53760,
+            "app_demapping": 393216,
+            "total_flops": 484352
+        },
+        "classical_flops": 484352,
+        "classical_mflops": 0.484352,
+        "flops_ratio": 943.5348837209302,
+        "neural_latency": {
+            "single_mean_ms": 5.245535023277625,
+            "single_std_ms": 0.12149877374001242,
+            "single_min_ms": 4.894000012427568,
+            "single_max_ms": 5.448400042951107,
+            "single_p95_ms": 5.386080010794103,
+            "batched_mean_ms": 2.0974578139430378,
+            "batched_std_ms": 0.057933216377751555
+        },
+        "classical_latency": {
+            "mean_ms": 19.332056248094887,
+            "std_ms": 0.9037423652819221
+        },
+        "neural_e2e_latency": {
+            "mean_ms": 22.206102499330882,
+            "std_ms": 1.2010932177131897
+        },
+        "training_step_latency": {
+            "mean_ms": 697.0331999938935,
+            "std_ms": 54.086533577909634
+        },
+        "memory": {
+            "param_bytes": 512084,
+            "param_mb": 0.4883613586425781,
+            "buffer_bytes": 0,
+            "activation_bytes_single": 4845568,
+            "activation_mb_single": 4.62109375,
+            "total_inference_mb": 5.109455108642578
+        },
+        "neural_throughput_single_mbps": 0.6832477495804745,
+        "neural_throughput_batched_mbps": 1.7087352013351782,
+        "classical_throughput_mbps": 0.15890704850927254,
+        "classical_pilot_overhead_pct": 14.285714285714285,
+        "neural_pilot_overhead_pct": 0.0
+    },
+    {
+        "fft_size": 256,
+        "channel_type": "rayleigh",
+        "num_ofdm_symbols": 14,
+        "info_bits_k_neural": 7168,
+        "coded_bits_n_neural": 14336,
+        "info_bits_k_classical": 6144,
+        "coded_bits_n_classical": 12288,
+        "grid_dimensions": "14 x 256",
+        "modulation": "16-QAM",
+        "hidden_dim": 48,
+        "num_res_blocks": 3,
+        "trainable_params": 128021,
+        "total_params": 128021,
+        "neural_macs": 455196672,
+        "neural_flops": 914006016,
+        "neural_gflops": 0.914006016,
+        "neural_mflops": 914.006016,
+        "classical_flops_detail": {
+            "ls_estimation": 3072,
+            "interpolation": 71680,
+            "lmmse_equalization": 107520,
+            "app_demapping": 786432,
+            "total_flops": 968704
+        },
+        "classical_flops": 968704,
+        "classical_mflops": 0.968704,
+        "flops_ratio": 943.5348837209302,
+        "neural_latency": {
+            "single_mean_ms": 7.46841998770833,
+            "single_std_ms": 0.8531308030713102,
+            "single_min_ms": 6.042300025001168,
+            "single_max_ms": 8.873699931427836,
+            "single_p95_ms": 8.811285009142011,
+            "batched_mean_ms": 5.2790415633353405,
+            "batched_std_ms": 0.24634857094150095
+        },
+        "classical_latency": {
+            "mean_ms": 68.83898000087356,
+            "std_ms": 3.665456354544577
+        },
+        "neural_e2e_latency": {
+            "mean_ms": 114.46739374950994,
+            "std_ms": 8.666848194466748
+        },
+        "training_step_latency": {
+            "mean_ms": 2102.5547999946866,
+            "std_ms": 140.48442321851388
+        },
+        "memory": {
+            "param_bytes": 512084,
+            "param_mb": 0.4883613586425781,
+            "buffer_bytes": 0,
+            "activation_bytes_single": 9691136,
+            "activation_mb_single": 9.2421875,
+            "total_inference_mb": 9.730548858642578
+        },
+        "neural_throughput_single_mbps": 0.9597746259312188,
+        "neural_throughput_batched_mbps": 1.3578222323127913,
+        "classical_throughput_mbps": 0.08925175823235663,
+        "classical_pilot_overhead_pct": 14.285714285714285,
+        "neural_pilot_overhead_pct": 0.0
+    },
+    {
+        "fft_size": 300,
+        "channel_type": "rayleigh",
+        "num_ofdm_symbols": 14,
+        "info_bits_k_neural": 8400,
+        "coded_bits_n_neural": 16800,
+        "info_bits_k_classical": 7200,
+        "coded_bits_n_classical": 14400,
+        "grid_dimensions": "14 x 300",
+        "modulation": "16-QAM",
+        "hidden_dim": 48,
+        "num_res_blocks": 3,
+        "trainable_params": 128021,
+        "total_params": 128021,
+        "neural_macs": 533433600,
+        "neural_flops": 1071100800,
+        "neural_gflops": 1.0711008,
+        "neural_mflops": 1071.1008,
+        "classical_flops_detail": {
+            "ls_estimation": 3600,
+            "interpolation": 84000,
+            "lmmse_equalization": 126000,
+            "app_demapping": 921600,
+            "total_flops": 1135200
+        },
+        "classical_flops": 1135200,
+        "classical_mflops": 1.1352,
+        "flops_ratio": 943.5348837209302,
+        "neural_latency": {
+            "single_mean_ms": 9.162855026079342,
+            "single_std_ms": 1.0152670223222522,
+            "single_min_ms": 7.469700067304075,
+            "single_max_ms": 10.406500077806413,
+            "single_p95_ms": 10.18705006572418,
+            "batched_mean_ms": 6.130454688172904,
+            "batched_std_ms": 0.5493970383573383
+        },
+        "classical_latency": {
+            "mean_ms": 88.34924374823458,
+            "std_ms": 3.4231195543021142
+        },
+        "neural_e2e_latency": {
+            "mean_ms": 103.88305499946,
+            "std_ms": 0.7892703557659785
+        },
+        "training_step_latency": {
+            "mean_ms": 2450.225929985754,
+            "std_ms": 61.87273592985688
+        },
+        "memory": {
+            "param_bytes": 512084,
+            "param_mb": 0.4883613586425781,
+            "buffer_bytes": 0,
+            "activation_bytes_single": 11356800,
+            "activation_mb_single": 10.8306884765625,
+            "total_inference_mb": 11.319049835205078
+        },
+        "neural_throughput_single_mbps": 0.9167448329250978,
+        "neural_throughput_batched_mbps": 1.3702083168815498,
+        "classical_throughput_mbps": 0.08149475529770872,
+        "classical_pilot_overhead_pct": 14.285714285714285,
+        "neural_pilot_overhead_pct": 0.0
+    }
+]

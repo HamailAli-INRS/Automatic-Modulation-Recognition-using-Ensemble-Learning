@@ -45,13 +45,15 @@ def run_experiment(args):
     # 1. Initialize Pilot-Free Transmission Chain & Neural Demapper
     pipeline = OFDMFECPipeline(
         num_ofdm_symbols=14,
-        fft_size=64,
+        fft_size=args.fft_size,
         num_bits_per_symbol=args.bits_per_symbol,
         coderate=args.coderate,
         num_ldpc_iter=args.ldpc_iter,
         channel_type=args.channel,
         device=device
     )
+
+    print(f"  * Subcarriers: {args.fft_size} | Coded Block Length (n): {pipeline.n:,} bits | Transmitted Info Bits (k): {pipeline.k:,} bits")
 
     neural_demapper = ResCNNDemapper(
         num_bits_per_symbol=args.bits_per_symbol,
@@ -73,7 +75,7 @@ def run_experiment(args):
     # 2. Initialize Classical Pilot Baseline for Direct Benchmarking
     classical_baseline = ClassicalPilotBaseline(
         num_ofdm_symbols=14,
-        fft_size=64,
+        fft_size=args.fft_size,
         num_bits_per_symbol=args.bits_per_symbol,
         coderate=args.coderate,
         num_ldpc_iter=args.ldpc_iter,
@@ -109,10 +111,18 @@ def run_experiment(args):
     train_duration = time.time() - start_time
     print(f"[OK] Online adaptation completed in {train_duration:.2f} seconds.")
 
-    # Save model weights
+    # Save model weights safely
     model_path = os.path.join(args.out_dir, "neural_demapper_weights.pt")
-    torch.save(neural_demapper.state_dict(), model_path)
-    print(f"[OK] Model weights saved to: {model_path}")
+    try:
+        if os.path.exists(model_path):
+            try:
+                os.remove(model_path)
+            except Exception:
+                pass
+        torch.save(neural_demapper.state_dict(), model_path)
+        print(f"[OK] Model weights saved to: {model_path}")
+    except Exception as e:
+        print(f"[WARN] Could not overwrite model weights file ({e}), continuing...")
 
     # 5. Phase 3: Comprehensive Benchmarking vs Classical Pilot Baseline
     print("\n[Phase 3] Evaluating BER / BLER Benchmarks across Eb/N0 Range...")
@@ -165,6 +175,7 @@ def run_experiment(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Pilot-Free Joint Neural Demodulation & 5G NR LDPC Experiments")
+    parser.add_argument("--fft_size", type=int, default=64, help="Number of OFDM subcarriers (64 for k=1792, 128 for k=3584, 256 for k=7168)")
     parser.add_argument("--warmup_steps", type=int, default=80, help="Number of initialization warmup steps")
     parser.add_argument("--steps", type=int, default=150, help="Number of online adaptation steps")
     parser.add_argument("--batch_size", type=int, default=16, help="Batch size per step")

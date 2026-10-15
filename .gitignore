@@ -24,3 +24,6 @@ scratch/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Large binary files
+Syndicate6-rec_final.pptx

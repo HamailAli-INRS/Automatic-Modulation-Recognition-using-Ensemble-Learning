@@ -1,0 +1,50 @@
+[
+    {
+        "subcarriers": 64,
+        "ofdm_symbols": 14,
+        "modulation": "16-QAM",
+        "coded_bits_n": 3584,
+        "info_bits_k": 1792,
+        "model_parameters": 225989,
+        "rescnn_flops_per_frame": 404164096,
+        "rescnn_gflops": 0.404164096,
+        "classical_gflops": 0.000274944,
+        "latency_single_frame_ms": 4.138616666993282,
+        "latency_single_std_ms": 0.5680799038374121,
+        "latency_batched_frame_ms": 1.83933062497393,
+        "throughput_single_mbps": 0.43299492177947796,
+        "throughput_batched_mbps": 0.9742674729973569
+    },
+    {
+        "subcarriers": 128,
+        "ofdm_symbols": 14,
+        "modulation": "16-QAM",
+        "coded_bits_n": 7168,
+        "info_bits_k": 3584,
+        "model_parameters": 225989,
+        "rescnn_flops_per_frame": 808328192,
+        "rescnn_gflops": 0.808328192,
+        "classical_gflops": 0.000549888,
+        "latency_single_frame_ms": 6.830356667584662,
+        "latency_single_std_ms": 0.6519784408647512,
+        "latency_batched_frame_ms": 4.363226562509226,
+        "throughput_single_mbps": 0.5247163763802934,
+        "throughput_batched_mbps": 0.8214104742566691
+    },
+    {
+        "subcarriers": 256,
+        "ofdm_symbols": 14,
+        "modulation": "16-QAM",
+        "coded_bits_n": 14336,
+        "info_bits_k": 7168,
+        "model_parameters": 225989,
+        "rescnn_flops_per_frame": 1616656384,
+        "rescnn_gflops": 1.616656384,
+        "classical_gflops": 0.001099776,
+        "latency_single_frame_ms": 9.282090000003032,
+        "latency_single_std_ms": 1.1318914567553038,
+        "latency_batched_frame_ms": 8.034862083339553,
+        "throughput_single_mbps": 0.7722398727008313,
+        "throughput_batched_mbps": 0.8921123879478892
+    }
+]
