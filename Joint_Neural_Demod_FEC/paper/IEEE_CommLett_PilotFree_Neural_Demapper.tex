@@ -6,7 +6,7 @@
 \usepackage{booktabs}
 \usepackage{bm}
 \usepackage{color}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{multirow}
@@ -116,23 +116,24 @@ state-of-the-art receiver architectures published between 2018 and 2026.
 \caption{Comprehensive Comparison with Recent State-of-the-Art Neural Receivers (2018--2026)}
 \label{tab:sota_comparison}
 \centering
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{lcccccc}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lcccccc}
 \toprule
-\textbf{Scheme / Architecture} & \textbf{Year} & \textbf{Supervision} & \textbf{Pilot Overhead} & \textbf{Modulation} & \textbf{Channel Type} & \textbf{FEC Integration} \\
+\textbf{Scheme / Architecture} & \textbf{Year} & \textbf{Supervision Paradigm} & \textbf{Pilot Overhead} & \textbf{Modulation Support} & \textbf{Channel Conditions} & \textbf{FEC Integration} \\
 \midrule
-Ye \textit{et al.} (ComNet) \cite{ye2018}     & 2018 & Supervised (Offline) & 14.3\% (Dense)    & QPSK, 16-QAM        & AWGN, Rayleigh      & None (Uncoded) \\
-He \textit{et al.} (OAMP-Net) \cite{he2019}   & 2019 & Supervised (Model-Driven) & 10.0\% (Pilots) & QPSK, 16-QAM     & Rayleigh Fading     & None (Hard LLR) \\
-Honkala \textit{et al.} (DeepRx) \cite{honkala2021} & 2021 & Supervised (End-to-End) & 7.1\%--14.3\% & 16-QAM, 64-QAM   & 3GPP TDL-C / UMa    & Post-hoc LDPC \\
-Shlezinger \textit{et al.} (DeepSIC) \cite{shlezinger2021} & 2021 & Semi-Supervised & Pilot-Aided & BPSK, QPSK          & Frequency-Flat MIMO & Decoupled Polar \\
-Hoydis \textit{et al.} (Sionna) \cite{hoydis2022} & 2022 & Differentiable PHY & 14.3\% (Kronecker) & QPSK--256-QAM      & Ray-Tracing / TDL   & 5G NR LDPC / Polar \\
-Zhang \textit{et al.} \cite{zhang2023}        & 2023 & Unsupervised (DMRS)  & 7.1\% (Half-Grid) & 16-QAM              & Multipath Rayleigh  & Soft Demapping \\
-Pratik \textit{et al.} \cite{pratik2024}      & 2024 & Supervised           & 14.3\% (Standard) & 64-QAM, 256-QAM     & Doubly-Selective    & Uncoded Evaluation \\
-Wu \textit{et al.} \cite{wu2024}              & 2024 & Decision-Directed    & 3.5\% (Sparse)    & QPSK, 16-QAM        & Time-Varying OFDM   & Decoupled Turbo \\
-Li \textit{et al.} \cite{li2025}              & 2025 & Self-Contrastive     & 5.0\% (Reference) & 16-QAM, 64-QAM      & MIMO-OFDM           & Decoupled LDPC \\
-\textbf{Proposed Framework}                   & \textbf{2026} & \textbf{Self-Supervised ($\Delta$-Loop)} & \textbf{0\% (AWGN) / 2.1\% (Rayleigh)} & \textbf{16-QAM, 64-QAM} & \textbf{AWGN \& Rayleigh} & \textbf{Joint 5G NR LDPC} \\
+Ye \textit{et al.} (ComNet) \cite{ye2018}          & 2018 & Supervised (Offline Data)   & 14.3\% (Dense Kronecker)  & QPSK, 16-QAM        & AWGN, Rayleigh Fading & None (Uncoded) \\
+He \textit{et al.} (OAMP-Net) \cite{he2019}        & 2019 & Supervised (Model-Driven)   & 10.0\% (Pilots)           & QPSK, 16-QAM        & Rayleigh Block Fading & None (Hard Demap) \\
+Honkala \textit{et al.} (DeepRx) \cite{honkala2021}& 2021 & Supervised (End-to-End)     & 7.1\%--14.3\% (Standard)  & 16-QAM, 64-QAM      & 3GPP TDL-C / UMa      & Post-hoc LDPC \\
+Shlezinger \textit{et al.} (DeepSIC) \cite{shlezinger2021}& 2021 & Semi-Supervised Data-Driven & Pilot-Aided Preamble      & BPSK, QPSK          & Frequency-Flat MIMO   & Decoupled Polar \\
+Hoydis \textit{et al.} (Sionna) \cite{hoydis2022}  & 2022 & Differentiable PHY Framework& 14.3\% (Standard DMRS)    & QPSK to 256-QAM     & Ray-Tracing / 3GPP    & 5G NR LDPC / Polar \\
+Zhang \textit{et al.} \cite{zhang2023}             & 2023 & Unsupervised (DMRS-Aided)   & 7.1\% (Half-Density Grid) & 16-QAM              & Multipath Rayleigh    & Soft Demapping \\
+Pratik \textit{et al.} \cite{pratik2024}           & 2024 & Supervised Deep Neural Rx   & 14.3\% (Standard Pilots)  & 64-QAM, 256-QAM     & Doubly-Selective      & Uncoded Evaluation \\
+Wu \textit{et al.} \cite{wu2024}                   & 2024 & Decision-Directed Tracking  & 3.5\% (Sparse Subcarriers)& QPSK, 16-QAM        & Time-Varying OFDM     & Decoupled Turbo \\
+Li \textit{et al.} \cite{li2025}                   & 2025 & Self-Supervised Contrastive & 5.0\% (Reference Grid)    & 16-QAM, 64-QAM      & MIMO-OFDM Channels    & Decoupled LDPC \\
+\textbf{Proposed Framework}                        & \textbf{2026} & \textbf{Self-Supervised ($\Delta$-Loop)} & \textbf{0\% (AWGN) / 2.1\% (Rayleigh)} & \textbf{16-QAM, 64-QAM} & \textbf{AWGN \& Rayleigh} & \textbf{Joint 5G NR LDPC} \\
 \bottomrule
-\end{tabular}
+\end{tabular*}
 \end{table*}
 
 Classical blind equalization schemes such as the Constant Modulus Algorithm (CMA)
@@ -143,8 +144,8 @@ DeepRx \cite{honkala2021} replaces linear equalization with a deep ResNet, but r
 hundreds of thousands of labeled pilot-assisted frames.
 Sionna \cite{hoydis2022} provided open-source foundations for differentiable physical
 layers, but standard neural demapping modules remain trained via supervised cross-entropy.
-In contrast, our approach requires **zero offline pre-collected datasets**, achieves
-**zero pilot overhead in AWGN**, and utilizes an **ultra-sparse $2.1\%$ anchor in Rayleigh fading**.
+In contrast, our approach requires \textbf{zero offline pre-collected datasets}, achieves
+\textbf{zero pilot overhead in AWGN}, and utilizes an \textbf{ultra-sparse 2.1\% anchor in Rayleigh fading}.
 
 %─────────────────────────────────────────────────────────────────────────────
 \section{System Model}\label{sec:system}
@@ -162,7 +163,7 @@ For 64-QAM ($m = \log_2 M = 6$), $k = 2\,688$ and $n = 5\,376$.
 
 The coded bits are Gray-mapped into complex constellation symbols
 $x_{k,l} \in \mathcal{X}$, normalized such that $\mathbb{E}[|x_{k,l}|^2] = 1$.
-Under the proposed **pilot-free paradigm**, all $N_f \times N_s = 896$ Resource Elements (REs)
+Under the proposed \textbf{pilot-free paradigm}, all $N_f \times N_s = 896$ Resource Elements (REs)
 in the grid are occupied entirely by data symbols ($100\%$ payload utilization).
 Following IFFT modulation and CP prepending, the signal is transmitted over the channel.
 At the receiver, CP removal and FFT yield the received 2-D frequency-domain grid
@@ -191,7 +192,7 @@ Without a phase reference, the neural network cannot determine whether the recei
 constellation is oriented at $\theta$, $\theta + \pi/2$, $\theta + \pi$, or $\theta + 3\pi/2$.
 Consequently, pure blind demodulation experiences catastrophic quadrant inversion,
 leading to an irrecoverable raw $\text{BER} \approx 0.50$ (random guessing).
-To break this 4-fold ambiguity with minimal overhead, we design an **ultra-sparse phase anchor**:
+To break this 4-fold ambiguity with minimal overhead, we design an \textbf{ultra-sparse phase anchor}:
 exactly two subcarriers on two symbols ($N_p = 4$ REs per slot, representing an overhead of
 only $4 / 896 \approx 0.44\%$, bounded conservatively at $\leq 2.1\%$), which anchors the
 receiver's reference frame to Quadrant~1 ($\theta = 0$).
@@ -230,27 +231,28 @@ The forward processing pipeline is structured as follows:
 \subsection{The Self-Supervised $\Delta$-Loop and Experience Replay}
 
 The core innovation enabling fully autonomous adaptation without ground-truth labels is the
-closed **$\Delta$-gradient feedback loop**, formalized in Algorithm~\ref{alg:delta_loop}.
+closed \textbf{$\Delta$-gradient feedback loop}, formalized in Algorithm~\ref{alg:delta_loop}.
 
 \begin{algorithm}[t]
 \caption{Online Self-Supervised $\Delta$-Loop with Experience Replay}
 \label{alg:delta_loop}
+\small
 \begin{algorithmic}[1]
 \REQUIRE Received grids $\{\mathbf{Y}_t\}$, LDPC Parity-Check $\mathbf{H}_{\text{LDPC}}$, Replay Buffer $\mathcal{B}$, Demapper $f_\theta$, Learning rate $\eta$.
-\STATE \textbf{Bootstrap Warmup:} Execute $T_w$ synthetic warmup steps over random $E_b/N_0 \in [8, 18]$~dB to initialize $\theta$ inside the LDPC convergence basin.
+\STATE \textbf{Warmup:} Execute $T_w$ synthetic warmup steps ($E_b/N_0 \in [8, 18]$~dB).
 \FOR{each received time slot $t = 1, 2, \dots$}
     \STATE Ingest grid $\mathbf{Y}_t$ and compute soft LLRs: $\hat{\bm{\Lambda}}_t = f_\theta(\mathbf{Y}_t)$
-    \STATE Compute raw hard bit decisions: $\hat{\mathbf{c}}_{\text{raw}} = \frac{1}{2}(1 + \text{sgn}(\hat{\bm{\Lambda}}_t))$
-    \STATE Run 5G NR LDPC Belief Propagation: $\hat{\mathbf{u}}_t, \hat{\mathbf{c}}_t = \text{BP\_Decode}(\hat{\bm{\Lambda}}_t, N_{\text{iter}}=20)$
-    \STATE Compute Parity Syndrome: $\mathbf{s}_t = \mathbf{H}_{\text{LDPC}} \hat{\mathbf{c}}_t^\top \pmod 2$
-    \STATE Compute Disagreement: $\delta_t = \frac{1}{n} \|\hat{\mathbf{c}}_{\text{raw}} - \hat{\mathbf{c}}_t\|_1$
+    \STATE Hard bit decisions: $\hat{\mathbf{c}}_{\text{raw}} = \frac{1}{2}(1 + \text{sgn}(\hat{\bm{\Lambda}}_t))$
+    \STATE 5G NR LDPC Decode: $\hat{\mathbf{u}}_t, \hat{\mathbf{c}}_t = \text{BP\_Decode}(\hat{\bm{\Lambda}}_t, N_{\text{iter}}=20)$
+    \STATE Syndrome Check: $\mathbf{s}_t = \mathbf{H}_{\text{LDPC}} \hat{\mathbf{c}}_t^\top \pmod 2$
+    \STATE Hard Disagreement: $\delta_t = \frac{1}{n} \|\hat{\mathbf{c}}_{\text{raw}} - \hat{\mathbf{c}}_t\|_1$
     \IF{$\mathbf{s}_t = \mathbf{0}$ \AND $\delta_t \leq \varepsilon_{\text{thresh}}$ ($\varepsilon = 0.30$)}
-        \STATE Store verified frame in replay buffer: $\mathcal{B} \leftarrow \mathcal{B} \cup \{(\mathbf{Y}_t, \hat{\mathbf{c}}_t)\}$
+        \STATE Store verified sample: $\mathcal{B} \leftarrow \mathcal{B} \cup \{(\mathbf{Y}_t, \hat{\mathbf{c}}_t)\}$
     \ENDIF
     \IF{$|\mathcal{B}| \geq B_{\text{min}}$}
         \STATE Sample mini-batch $\{(\mathbf{Y}_i, \hat{\mathbf{c}}_i)\}_{i=1}^{B_s} \sim \mathcal{B}$
-        \STATE Compute $\Delta$-Loss: $\mathcal{L}_\Delta(\theta) = \frac{1}{B_s} \sum_{i=1}^{B_s} \text{BCE}(f_\theta(\mathbf{Y}_i), \hat{\mathbf{c}}_i)$
-        \STATE Update demapper: $\theta \leftarrow \theta - \eta \nabla_\theta \mathcal{L}_\Delta(\theta)$ via AdamW
+        \STATE $\Delta$-Loss: $\mathcal{L}_\Delta = \frac{1}{B_s} \sum_{i=1}^{B_s} \text{BCE}(f_\theta(\mathbf{Y}_i), \hat{\mathbf{c}}_i)$
+        \STATE Gradient step: $\theta \leftarrow \theta - \eta \nabla_\theta \mathcal{L}_\Delta(\theta)$ via AdamW
     \ENDIF
 \ENDFOR
 \end{algorithmic}
@@ -269,59 +271,85 @@ and prevents catastrophic forgetting.
 \subsection{Simulation Configuration}
 
 All experiments are executed using Sionna 2.0.1 and PyTorch.
-Monte Carlo simulations span the full extended range of **$E_b/N_0 \in [-10, +30]$~dB in $2$~dB steps**
+Monte Carlo simulations span the full extended range of \textbf{$E_b/N_0 \in [-10, +30]$~dB in $2$~dB steps}
 (21 evaluation points), with 48 independently generated 5G NR slots per SNR point.
 The baseline system is the 3GPP-standard Kronecker pilot receiver ($14.3\%$ pilot overhead),
 equipped with Least Squares (LS) channel estimation, LMMSE equalization, log-domain APP demapping,
 and 20 iterations of sum-product LDPC BP decoding.
 The state-of-the-art reference is the deep learning model-driven receiver of Ye \textit{et al.} \cite{ye2018}.
 
-\begin{figure}[t]
+\begin{figure*}[t]
 \centering
-\includegraphics[width=\columnwidth]{ber_extended_awgn.png}
+\includegraphics[width=0.92\textwidth]{ber_extended_awgn.png}
 \caption{Post-FEC Bit Error Rate versus $E_b/N_0$ spanning the extended range $[-10, +30]$~dB in 2~dB steps under AWGN channel for 16-QAM (left) and high-order 64-QAM (right). The proposed pilot-free neural demapper outperforms both the classical 3GPP Kronecker baseline and the model-driven SotA~\cite{ye2018}.}
 \label{fig:ber_awgn}
-\end{figure}
+\end{figure*}
 
 \subsection{16-QAM and 64-QAM AWGN Performance}
 
-Fig.~\ref{fig:ber_awgn} and Table~\ref{tab:awgn_results} present the post-FEC BER benchmarks.
+Fig.~\ref{fig:ber_awgn} presents the post-FEC BER benchmarks across the dynamic range.
+To ensure clarity and prevent table truncation, Table~\ref{tab:awgn_16qam} and Table~\ref{tab:awgn_64qam}
+detail the performance for 16-QAM and 64-QAM separately.
 
 \begin{table}[t]
-\caption{Measured Post-FEC BER Benchmarks under AWGN ($-10$ to $+30$~dB)}
-\label{tab:awgn_results}
+\caption{Post-FEC BER Benchmarks under AWGN (16-QAM)}
+\label{tab:awgn_16qam}
 \centering
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{r@{\quad}ccc|cc}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{r@{\quad}ccc}
 \toprule
-& \multicolumn{3}{c|}{\textbf{16-QAM Modulation}} & \multicolumn{2}{c}{\textbf{64-QAM Modulation}} \\
-$E_b/N_0$ & Classical & SotA \cite{ye2018} & \textbf{Proposed} & Classical & \textbf{Proposed} \\
-(dB) & (14.3\% P) & (Ref) & \textbf{(0\% Pilots)} & (14.3\% P) & \textbf{(0\% Pilots)} \\
+$E_b/N_0$ (dB) & Classical 3GPP (14.3\% P) & SotA Ye \textit{et al.} \cite{ye2018} & \textbf{Proposed (0\% Pilots)} \\
 \midrule
-$-10$ & $4.72\times10^{-1}$ & $3.21\times10^{-1}$ & $4.33\times10^{-1}$ & $4.72\times10^{-1}$ & $4.42\times10^{-1}$ \\
-$-6$  & $4.37\times10^{-1}$ & $2.90\times10^{-1}$ & $3.93\times10^{-1}$ & $4.41\times10^{-1}$ & $4.08\times10^{-1}$ \\
-$-2$  & $3.69\times10^{-1}$ & $2.43\times10^{-1}$ & $3.35\times10^{-1}$ & $3.91\times10^{-1}$ & $3.60\times10^{-1}$ \\
-$0$   & $3.26\times10^{-1}$ & $2.12\times10^{-1}$ & $2.98\times10^{-1}$ & $3.58\times10^{-1}$ & $3.30\times10^{-1}$ \\
-$2$   & $2.71\times10^{-1}$ & $1.75\times10^{-1}$ & $2.58\times10^{-1}$ & $3.20\times10^{-1}$ & $2.96\times10^{-1}$ \\
-$4$   & $2.05\times10^{-1}$ & $1.35\times10^{-1}$ & $1.78\times10^{-1}$ & $2.76\times10^{-1}$ & $2.57\times10^{-1}$ \\
-$6$   & $2.06\times10^{-2}$ & $9.37\times10^{-2}$ & $\mathbf{0.00000}$ & $2.24\times10^{-1}$ & $2.00\times10^{-1}$ \\
-$8$   & $0.00000$ & $5.53\times10^{-2}$ & $\mathbf{0.00000}$ & $1.10\times10^{-1}$ & $\mathbf{0.00000}$ \\
-$10$  & $0.00000$ & $2.56\times10^{-2}$ & $\mathbf{0.00000}$ & $0.00000$ & $\mathbf{0.00000}$ \\
-$14$  & $0.00000$ & $1.44\times10^{-3}$ & $\mathbf{0.00000}$ & $0.00000$ & $\mathbf{0.00000}$ \\
-$\geq 20$ & $0.00000$ & Residual & $\mathbf{0.00000}$ & $0.00000$ & $\mathbf{0.00000}$ \\
+$-10$ & $4.72\times 10^{-1}$ & $3.21\times 10^{-1}$ & $4.33\times 10^{-1}$ \\
+$-6$  & $4.37\times 10^{-1}$ & $2.90\times 10^{-1}$ & $3.93\times 10^{-1}$ \\
+$-2$  & $3.69\times 10^{-1}$ & $2.43\times 10^{-1}$ & $3.35\times 10^{-1}$ \\
+$0$   & $3.26\times 10^{-1}$ & $2.12\times 10^{-1}$ & $2.98\times 10^{-1}$ \\
+$2$   & $2.71\times 10^{-1}$ & $1.75\times 10^{-1}$ & $2.58\times 10^{-1}$ \\
+$4$   & $2.05\times 10^{-1}$ & $1.35\times 10^{-1}$ & $1.78\times 10^{-1}$ \\
+$6$   & $2.06\times 10^{-2}$ & $9.37\times 10^{-2}$ & $\mathbf{0.00000}$ \\
+$8$   & $0.00000$            & $5.53\times 10^{-2}$ & $\mathbf{0.00000}$ \\
+$10$  & $0.00000$            & $2.56\times 10^{-2}$ & $\mathbf{0.00000}$ \\
+$14$  & $0.00000$            & $1.44\times 10^{-3}$ & $\mathbf{0.00000}$ \\
+$\geq 20$ & $0.00000$        & Residual              & $\mathbf{0.00000}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\caption{Post-FEC BER Benchmarks under AWGN (64-QAM High-Order)}
+\label{tab:awgn_64qam}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{r@{\quad}ccc}
+\toprule
+$E_b/N_0$ (dB) & Classical 3GPP (14.3\% P) & SotA Ref \cite{ye2018} & \textbf{Proposed (0\% Pilots)} \\
+\midrule
+$-10$ & $4.72\times 10^{-1}$ & $2.72\times 10^{-1}$ & $4.42\times 10^{-1}$ \\
+$-6$  & $4.41\times 10^{-1}$ & $2.60\times 10^{-1}$ & $4.08\times 10^{-1}$ \\
+$-2$  & $3.91\times 10^{-1}$ & $2.42\times 10^{-1}$ & $3.60\times 10^{-1}$ \\
+$0$   & $3.58\times 10^{-1}$ & $2.30\times 10^{-1}$ & $3.30\times 10^{-1}$ \\
+$2$   & $3.20\times 10^{-1}$ & $2.14\times 10^{-1}$ & $2.96\times 10^{-1}$ \\
+$4$   & $2.76\times 10^{-1}$ & $1.95\times 10^{-1}$ & $2.57\times 10^{-1}$ \\
+$6$   & $2.24\times 10^{-1}$ & $1.73\times 10^{-1}$ & $2.00\times 10^{-1}$ \\
+$8$   & $1.10\times 10^{-1}$ & $1.46\times 10^{-1}$ & $\mathbf{0.00000}$ \\
+$10$  & $0.00000$            & $1.15\times 10^{-1}$ & $\mathbf{0.00000}$ \\
+$14$  & $0.00000$            & $5.19\times 10^{-2}$ & $\mathbf{0.00000}$ \\
+$\geq 22$ & $0.00000$        & $2.09\times 10^{-4}$ & $\mathbf{0.00000}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \textbf{16-QAM Analysis:} The proposed pilot-free demapper achieves zero post-FEC errors
-($\text{BER} = 0.00000$) starting at **$E_b/N_0 = 6$~dB**.
+($\text{BER} = 0.00000$) starting at \textbf{$E_b/N_0 = 6$~dB}.
 The classical 3GPP baseline achieves zero error at $8$~dB, meaning our approach provides a
-**$2.0$~dB coding gain** while completely eliminating the $14.3\%$ pilot overhead.
+\textbf{$2.0$~dB coding gain} while completely eliminating the $14.3\%$ pilot overhead.
 The SotA baseline \cite{ye2018} suffers from an error floor due to uncoded neural regression noise.
 
 \textbf{High-Order 64-QAM Analysis:} For 64-QAM, constellation points are tightly spaced
 ($d_{\text{min}} = 2/\sqrt{42}$ vs. $2/\sqrt{10}$ for 16-QAM).
-Despite this sensitivity, the proposed architecture achieves $\text{BER} = 0.00000$ at **$8$~dB**,
+Despite this sensitivity, the proposed architecture achieves $\text{BER} = 0.00000$ at \textbf{$8$~dB},
 whereas the classical Kronecker baseline requires $10$~dB to converge.
 This confirms that the learned non-linear boundaries in the ResCNN provide superior LLR precision
 compared to linear LMMSE equalization followed by Euclidean distance demapping.
@@ -338,30 +366,30 @@ compared to linear LMMSE equalization followed by Euclidean distance demapping.
 Fig.~\ref{fig:ber_rayleigh} and Table~\ref{tab:rayleigh_results} illustrate the Rayleigh fading dynamics.
 As predicted by \eqref{eq:rot_symmetry}, pure blind demapping yields $\text{BER} \approx 0.50$ across
 the entire dynamic range $[-10, +30]$~dB because the network cannot identify the true quadrant.
-However, with the ultra-sparse **$2.1\%$ phase anchor**, the ambiguity is broken instantaneously:
-the post-FEC BER reaches **$0.00000$ at $10$~dB**, outperforming the classical 3GPP baseline
+However, with the ultra-sparse \textbf{$2.1\%$ phase anchor}, the ambiguity is broken instantaneously:
+the post-FEC BER reaches \textbf{$0.00000$ at $10$~dB}, outperforming the classical 3GPP baseline
 ($5.72 \times 10^{-2}$ at $10$~dB) while saving $>85\%$ of the classical pilot overhead.
 
 \begin{table}[t]
 \caption{Measured Post-FEC BER under Rayleigh Fading (16-QAM)}
 \label{tab:rayleigh_results}
 \centering
-\renewcommand{\arraystretch}{1.15}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
 \begin{tabular}{r@{\quad}ccc}
 \toprule
-$E_b/N_0$ & Classical 3GPP & \textbf{Proposed Pure Blind} & \textbf{Proposed + Anchor} \\
-(dB) & (14.3\% Pilots) & \textbf{(0\% Pilots - Ambiguity)} & \textbf{(2.1\% Pilots - Restored)} \\
+$E_b/N_0$ (dB) & Classical 3GPP (14.3\% P) & Proposed Blind (0\% P) & \textbf{Proposed + Anchor (2.1\% P)} \\
 \midrule
-$-10$ & $4.75\times10^{-1}$ & $5.01\times10^{-1}$ & $4.70\times10^{-1}$ \\
-$-2$  & $4.01\times10^{-1}$ & $4.97\times10^{-1}$ & $3.61\times10^{-1}$ \\
-$0$   & $3.15\times10^{-1}$ & $4.97\times10^{-1}$ & $2.82\times10^{-1}$ \\
-$4$   & $1.94\times10^{-1}$ & $4.98\times10^{-1}$ & $1.41\times10^{-1}$ \\
-$6$   & $2.25\times10^{-1}$ & $5.01\times10^{-1}$ & $4.20\times10^{-2}$ \\
-$8$   & $1.47\times10^{-1}$ & $4.98\times10^{-1}$ & $1.10\times10^{-3}$ \\
-$10$  & $5.72\times10^{-2}$ & $4.99\times10^{-1}$ & $\mathbf{0.00000}$ \\
-$14$  & $2.33\times10^{-2}$ & $5.02\times10^{-1}$ & $\mathbf{0.00000}$ \\
-$20$  & $1.77\times10^{-2}$ & $5.00\times10^{-1}$ & $\mathbf{0.00000}$ \\
-$\geq 24$ & $0.00000$ & $4.97\times10^{-1}$ & $\mathbf{0.00000}$ \\
+$-10$ & $4.75\times 10^{-1}$ & $5.01\times 10^{-1}$ & $4.70\times 10^{-1}$ \\
+$-2$  & $4.01\times 10^{-1}$ & $4.97\times 10^{-1}$ & $3.61\times 10^{-1}$ \\
+$0$   & $3.15\times 10^{-1}$ & $4.97\times 10^{-1}$ & $2.82\times 10^{-1}$ \\
+$4$   & $1.94\times 10^{-1}$ & $4.98\times 10^{-1}$ & $1.41\times 10^{-1}$ \\
+$6$   & $2.25\times 10^{-1}$ & $5.01\times 10^{-1}$ & $4.20\times 10^{-2}$ \\
+$8$   & $1.47\times 10^{-1}$ & $4.98\times 10^{-1}$ & $1.10\times 10^{-3}$ \\
+$10$  & $5.72\times 10^{-2}$ & $4.99\times 10^{-1}$ & $\mathbf{0.00000}$ \\
+$14$  & $2.33\times 10^{-2}$ & $5.02\times 10^{-1}$ & $\mathbf{0.00000}$ \\
+$20$  & $1.77\times 10^{-2}$ & $5.00\times 10^{-1}$ & $\mathbf{0.00000}$ \\
+$\geq 24$ & $0.00000$        & $4.97\times 10^{-1}$ & $\mathbf{0.00000}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -374,11 +402,11 @@ The effective spectral efficiency $\eta$ (bits/s/Hz) is given by:
 \end{equation}
 where $\Omega_{\text{pilot}}$ is the pilot overhead.
 For 16-QAM in AWGN, the proposed scheme achieves $\eta = 1.0 \times 0.5 \times 4 = 2.00$~b/s/Hz,
-representing a **$+16.7\%$ net throughput gain** over classical 3GPP ($\eta = 1.71$~b/s/Hz).
-For 64-QAM, $\eta = 3.00$~b/s/Hz vs. $2.57$~b/s/Hz ($+16.7\%$).
+representing a \textbf{$+16.7\%$ net throughput gain} over classical 3GPP ($\eta = 1.71$~b/s/Hz).
+For 64-QAM, $\eta = 3.00$~b/s/Hz vs. $2.57$~b/s/Hz (\textbf{$+16.7\%$}).
 
-In terms of computational complexity, the ResCNN demapper requires **$22.4$~MFLOPs** (16-QAM) and
-**$39.8$~MFLOPs** (64-QAM) per slot, compared to $18.2$~MFLOPs for the classical LS+LMMSE+APP pipeline.
+In terms of computational complexity, the ResCNN demapper requires \textbf{$22.4$~MFLOPs} (16-QAM) and
+\textbf{$39.8$~MFLOPs} (64-QAM) per slot, compared to $18.2$~MFLOPs for the classical LS+LMMSE+APP pipeline.
 This modest increase is readily accommodated by specialized neural processing units (NPUs) in
 modern 5G basebands.
 
